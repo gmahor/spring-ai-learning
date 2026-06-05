@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: springboot-openAi
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+
+  logging:
+    pattern:
+      console: "%green(%d{HH:mm:ss.SSS}) %highlight(%-5level) %magenta([%thread]) %cyan(%logger{20}) - %msg%n"
