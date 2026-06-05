@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/springboot-ollama/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-openAi/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-gemma3-docker/pom.xml" />
       </list>
     </option>
   </component>

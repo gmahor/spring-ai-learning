@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: springboot-gemma3-docker
+  ai:
+    openai:
+      chat:
+        model: ai/gemma3
+        base-url: http://localhost:12434/engines/v1
+      api-key: dummy
+  logging:
+    pattern:
+      console: "%green(%d{HH:mm:ss.SSS}) %highlight(%-5level) %magenta([%thread]) %cyan(%logger{20}) - %msg%n"
+
