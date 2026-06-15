@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: springboot-multimodel-ai
+
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+
+#    model:
+#      chat: ollama
+    ollama:
+      chat:
+        model: llama3.2
+    chat:
+      client:
+        enabled: false
+
+  logging:
+    pattern:
+      console: "%green(%d{HH:mm:ss.SSS}) %highlight(%-5level) %magenta([%thread]) %cyan(%logger{20}) - %msg%n"
+
