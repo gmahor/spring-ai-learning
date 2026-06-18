@@ -6,16 +6,32 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot-openAi" />
-        <module name="springboot-ollama" />
+        <module name="springboot-multimodel-ai" />
         <module name="springboot-gemma3-docker" />
       </profile>
+      <profile name="Annotation profile for springboot-ollama-prompts" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="springboot-openAi" />
+        <module name="springboot-ollama-prompts" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springboot-ollama" target="21" />
+      <module name="springboot-ollama (1)" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="springboot-gemma3-docker" options="-parameters" />
+      <module name="springboot-multimodel-ai" options="-parameters" />
       <module name="springboot-ollama" options="-parameters" />
+      <module name="springboot-ollama (1)" options="-parameters" />
+      <module name="springboot-ollama-prompts" options="-parameters" />
       <module name="springboot-openAi" options="-parameters" />
     </option>
   </component>

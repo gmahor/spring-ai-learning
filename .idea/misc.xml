@@ -4,9 +4,10 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/springboot-ollama/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-openAi/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-gemma3-docker/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-multimodel-ai/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-ollama-prompts/pom.xml" />
       </list>
     </option>
   </component>
