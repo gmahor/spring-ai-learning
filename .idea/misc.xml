@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/springboot-gemma3-docker/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-multimodel-ai/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-ollama-prompts/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-ollama/pom.xml" />
       </list>
     </option>
   </component>
