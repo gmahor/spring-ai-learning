@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -9,14 +10,14 @@
         <module name="springboot-multimodel-ai" />
         <module name="springboot-gemma3-docker" />
       </profile>
-      <profile name="Annotation profile for springboot-ollama" enabled="true">
+      <profile name="Annotation profile for springboot-ai-advisors" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
-        <module name="springboot-ollama" />
+        <module name="springboot-ai-advisors" />
       </profile>
       <profile name="Annotation profile for springboot-openAi" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -28,6 +29,7 @@
         </processorPath>
         <module name="springboot-openAi" />
         <module name="springboot-ollama-prompts" />
+        <module name="springboot-ollama" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -36,6 +38,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-ai-advisors" options="-parameters" />
       <module name="springboot-gemma3-docker" options="-parameters" />
       <module name="springboot-multimodel-ai" options="-parameters" />
       <module name="springboot-ollama" options="-parameters" />

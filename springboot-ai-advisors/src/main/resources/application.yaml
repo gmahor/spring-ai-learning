@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: springboot-ai-advisors
+
+  ai:
+    model:
+      chat: ollama
+
+    ollama:
+      chat:
+        model: llama3.2
+
+logging:
+  pattern:
+    console: "%green(%d{HH:mm:ss.SSS}) %highlight(%-5level) %magenta([%thread]) %cyan(%logger{20}) - %msg%n"
+
+  level:
+    org.springframework.ai.chat.client: DEBUG
+    org.springframework.ai.chat.client.advisor: DEBUG
