@@ -2,13 +2,45 @@ spring:
   application:
     name: springboot-ollama-prompts
 
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/spring-ai
+    username: ai
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
   ai:
+
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+            schema: classpath:schema/schema-mysql.sql
+#  sql:
+#    init:
+#      mode: always
+#      schema-locations: classpath:schema/schema-mysql.sql
+
     model:
       chat: ollama
     ollama:
       chat:
         model: llama3.2
 
-  logging:
-    pattern:
-      console: "%green(%d{HH:mm:ss.SSS}) %highlight(%-5level) %magenta([%thread]) %cyan(%logger{20}) - %msg%n"
+
+
+logging:
+  pattern:
+    console: "%green(%d{HH:mm:ss.SSS}) %highlight(%-5level) %magenta([%thread]) %cyan(%logger{20}) - %msg%n"
+
+  level:
+    org.springframework.ai.chat.client: DEBUG
+    org.springframework.ai.chat.client.advisor: DEBUG

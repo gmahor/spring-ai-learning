@@ -10,24 +10,15 @@
         <module name="springboot-multimodel-ai" />
         <module name="springboot-gemma3-docker" />
       </profile>
-      <profile name="Annotation profile for springboot-ai-advisors" enabled="true">
+      <profile name="Annotation profile for springboot-ollama-prompts" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-        </processorPath>
-        <module name="springboot-ai-advisors" />
-      </profile>
-      <profile name="Annotation profile for springboot-openAi" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
         <module name="springboot-openAi" />
+        <module name="springboot-ai-advisors" />
         <module name="springboot-ollama-prompts" />
         <module name="springboot-ollama" />
       </profile>
