@@ -1,0 +1,34 @@
+services:
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama-ai
+    restart: always
+
+    ports:
+      - "11434:11434"
+
+    volumes:
+      - ollama_data:/root/.ollama
+
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+
+    networks:
+      - ai-network
+
+    entrypoint: [ "/bin/sh", "-c" ]
+    command: >
+      "ollama serve &
+      sleep 5 &&
+      ollama pull llama3.2:latest &&
+      ollama pull mxbai-embed-large &&
+      wait"
+
+volumes:
+  ollama_data:
+
+networks:
+  ai-network:
+    driver: bridge

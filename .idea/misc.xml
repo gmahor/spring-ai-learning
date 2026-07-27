@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/springboot-ollama-prompts/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-ollama/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-ai-advisors/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-rag/pom.xml" />
       </list>
     </option>
   </component>

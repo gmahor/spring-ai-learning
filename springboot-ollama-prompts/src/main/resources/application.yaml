@@ -18,6 +18,17 @@ spring:
 
   ai:
 
+    ## Ollama Configuration (Docker)
+    model:
+      chat: ollama
+
+    ollama:
+      base-url: http://localhost:11434
+
+      chat:
+        model: llama3.2:latest
+    ## end
+
     chat:
       memory:
         repository:
@@ -29,11 +40,12 @@ spring:
 #      mode: always
 #      schema-locations: classpath:schema/schema-mysql.sql
 
-    model:
-      chat: ollama
-    ollama:
-      chat:
-        model: llama3.2
+## Ollama Configuration (Install in the system)
+#    model:
+#      chat: ollama
+#    ollama:
+#      chat:
+#        model: llama3.2
 
 
 

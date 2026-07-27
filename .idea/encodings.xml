@@ -7,5 +7,6 @@
     <file url="file://$PROJECT_DIR$/springboot-ollama-prompts/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-ollama/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-openAi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-rag/src/main/java" charset="UTF-8" />
   </component>
 </project>
