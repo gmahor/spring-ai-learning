@@ -1,6 +1,7 @@
 package com.learnai.confg;
 
 import com.learnai.advisors.TokenUsageAuditAdvisor;
+import com.learnai.ragconfig.PIIMaskingDocumentPostProcessor;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
@@ -39,11 +40,14 @@ public class ChatMemoryChatClientConfig {
     RetrievalAugmentationAdvisor retrievalAugmentationAdvisor(VectorStore vectorStore,
             ChatClient.Builder chatClientBuilder) {
         return RetrievalAugmentationAdvisor.builder()
+//                This Query transformer will translate the msg/or query (hindi, telugu, kannada, tamil, english ) to english
                 .queryTransformers(TranslationQueryTransformer.builder()
                         .chatClientBuilder(chatClientBuilder.clone()).targetLanguage("english")
                         .build())
                 .documentRetriever(VectorStoreDocumentRetriever.builder().vectorStore(vectorStore)
                         .topK(3).similarityThreshold(0.5).build())
+//                This will hide the sensitive information from the response
+                .documentPostProcessors(PIIMaskingDocumentPostProcessor.builder())
                 .build();
     }
 }
