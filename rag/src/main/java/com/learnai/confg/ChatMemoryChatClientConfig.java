@@ -2,6 +2,7 @@ package com.learnai.confg;
 
 import com.learnai.advisors.TokenUsageAuditAdvisor;
 import com.learnai.ragconfig.PIIMaskingDocumentPostProcessor;
+import org.springframework.ai.chat.cache.semantic.SemanticCacheAdvisor;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
@@ -28,12 +29,12 @@ public class ChatMemoryChatClientConfig {
 
     @Bean("chatMemoryChatClient")
     public ChatClient chatClient(ChatClient.Builder builder, ChatMemory chatMemory,
-            RetrievalAugmentationAdvisor retrievalAugmentationAdvisor) {
+                                 RetrievalAugmentationAdvisor retrievalAugmentationAdvisor, SemanticCacheAdvisor semanticCacheAdvisor) {
         SimpleLoggerAdvisor loggerAdvisor = new SimpleLoggerAdvisor();
         Advisor tokenUsageAdvisor = new TokenUsageAuditAdvisor();
         Advisor memoryAdvisor = MessageChatMemoryAdvisor.builder(chatMemory).build();
         return builder.defaultAdvisors(List.of(loggerAdvisor, tokenUsageAdvisor, memoryAdvisor,
-                retrievalAugmentationAdvisor)).build();
+                retrievalAugmentationAdvisor,semanticCacheAdvisor)).build();
     }
 
     @Bean
