@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: tool-calling
+
+  ai:
+
+    # Chat model provider
+    model:
+      chat: ollama
+
+    # Ollama
+    ollama:
+      base-url: http://localhost:11434
+
+      chat:
+        model: llama3.2:latest
+
+      embedding:
+        model: mxbai-embed-large
+
+    # Qdrant
+    vectorstore:
+      qdrant:
+        initialize-schema: true
+        host: localhost
+        port: 6334
+        collection-name: spring_ai_96
+
+
+  docker:
+    compose:
+      stop:
+        command: down
+
+logging:
+  pattern:
+    console: "%green(%d{HH:mm:ss.SSS}) %highlight(%-5level) %magenta([%thread]) %cyan(%logger{20}) - %msg%n"
+
+  level:
+    org.springframework.ai.chat.client: DEBUG
+    org.springframework.ai.chat.client.advisor: DEBUG
